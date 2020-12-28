@@ -28,14 +28,29 @@ if(elForm) {
 var elCheckbox = $_('.js-checkbox', elForm);
 }
 
+
+var addTodo = function(todo, isImportant) {
+  if(isImportant) {
+    toDoList.unshift(todo);
+  }else{
+    toDoList.push(todo);
+  }
+}
+
+elInput.focus();
 elForm.addEventListener('submit', function (evt) {
   evt.preventDefault();
 
-  var newToDo = {};
+  var newToDo = {
+    text: elInput.value,
+    complated: false
+  }
 
-  newToDo.text = elInput.value;
-  newToDo.complated = false;
+  var isImportant = elCheckbox.checked;
 
-  toDoList.push(newToDo);
-  console.log(toDoList);
-});
+  addTodo(newToDo, isImportant);
+
+
+   console.log(toDoList);
+    elInput.value = '';
+  });
