@@ -1,0 +1,29 @@
+.todo-container {
+  margin-top: 50px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgb(216, 205, 205, 0.2);
+  border-radius: 10px;
+  padding: 30px;
+}
+.check-box {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #555;
+  border-radius: 8px;
+}
+
+.checkbox-controller:checked + .check-box {
+  background-image: url("../img/check.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.border-bottom-p {
+  border-bottom: 2px solid #ddd;
+  padding: 8px;
+}
